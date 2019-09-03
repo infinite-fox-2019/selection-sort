@@ -1,12 +1,17 @@
 function selectionSort(num){
+    var temp = 0;
     for(var i = 0;i<num.length;i++){
+        temp = i;
         for(var j=i;j<num.length;j++){
-            if(num[j+1]<num[j]){
-                var temp = num[j];
-                num [j] = num[j+1];
-                num[j+1]=temp;
+            if(num[temp]>num[j]){
+                temp = j
             }
         }
+        if (i != temp){
+            var test = num[i];
+            num[i]=num[temp];
+            num[temp] = test;
+        } 
     }
     return num;
 }
