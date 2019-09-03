@@ -1,31 +1,20 @@
+// smallest value swapped with the leftmost number in array
+//release 0
 
-
-//basic linear search
-function linearSearch(search, arr) {
-    
-    for (var i=0; i<arr.length; i++) {
-        if (arr.indexOf(search) !== -1) {
-            return arr.indexOf(search)
-        } else {
-            return -1
+function selectSort(arr) {
+for (var i=0; i<arr.length-1; i++) {
+    for (var j=i+1; j<arr.length; j++) {
+        if (arr[i] > arr[j]) {
+            [arr[i], arr[j]] = [arr[j], arr[i]]
         }
     }
-
 }
-let random_numbers= [6, 29, 18, 2, 72, 19, 18, 10, 37];
-// console.log(linearSearch(18, random_numbers));
-// console.log(linearSearch(9, random_numbers));
-
-//global linear search
-
-function globalLinearSearch(search, arr) {
-    var res = []
-    for (var i=0; i<arr.length; i++) {
-        if (search === arr[i]) {
-            res.push(i)
-        }
-    }
-    return res
+return arr
 }
-let banana_arr = "banana".split(""); //["b", "a", "n", "a", "n", "a"]
-console.log(globalLinearSearch("a", banana_arr)); //[1, 3, 5]
+console.log((selectSort([33, 2, 52, 106, 73]))); //[2, 33, 52, 73, 106] 
+console.log((selectSort([13, 5, 22, 99, 11] ))); //[5, 11, 13, 22, 99]
+
+
+
+
+
